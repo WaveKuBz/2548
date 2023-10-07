@@ -1,0 +1,251 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>Event sheet 1</name>
+    <events>
+        <variable constant="0" name="Live" sid="532000807764362" static="0" type="number">3</variable>
+        <variable constant="0" name="Score" sid="620826409855893" static="0" type="number">0</variable>
+        <event-block sid="514751026526940">
+            <conditions>
+                <condition behavior="Platform" id="8" name="On moved" sid="812621008430808" type="ตัวละคร" />
+            </conditions>
+            <actions>
+                <action id="4" name="Set animation" sid="753175535749414" type="ตัวละคร">
+                    <param id="0" name="Animation">&quot;Walk&quot;</param>
+                    <param id="1" name="From">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="852363682818591">
+            <conditions>
+                <condition behavior="Platform" id="7" name="On stopped" sid="963227971157863" type="ตัวละคร" />
+            </conditions>
+            <actions>
+                <action id="4" name="Set animation" sid="822473185838922" type="ตัวละคร">
+                    <param id="0" name="Animation">&quot;Stand&quot;</param>
+                    <param id="1" name="From">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="231957707137732">
+            <conditions>
+                <condition behavior="Platform" id="5" name="On jump" sid="154462303257532" type="ตัวละคร" />
+            </conditions>
+            <actions>
+                <action id="4" name="Set animation" sid="146101927959637" type="ตัวละคร">
+                    <param id="0" name="Animation">&quot;Jump&quot;</param>
+                    <param id="1" name="From">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="360995680027573">
+            <conditions>
+                <condition behavior="Platform" id="9" name="On landed" sid="150172591527892" type="ตัวละคร" />
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="641312668092538">
+                    <conditions>
+                        <condition behavior="Platform" id="0" name="Is moving" sid="973571048551270" type="ตัวละคร" />
+                    </conditions>
+                    <actions>
+                        <action id="4" name="Set animation" sid="803310643812630" type="ตัวละคร">
+                            <param id="0" name="Animation">&quot;Walk&quot;</param>
+                            <param id="1" name="From">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="644282959482211">
+                    <conditions>
+                        <condition id="-22" name="Else" sid="710494843801454" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="4" name="Set animation" sid="671683099529527" type="ตัวละคร">
+                            <param id="0" name="Animation">&quot;Stand&quot;</param>
+                            <param id="1" name="From">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="905343682565685">
+            <conditions>
+                <condition id="2" name="Key is down" sid="726584125327834" type="Keyboard">
+                    <param id="0" name="Key">39</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="7" name="Set mirrored" sid="528753995685305" type="ตัวละคร">
+                    <param id="0" name="State">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="121971885002494">
+            <conditions>
+                <condition id="2" name="Key is down" sid="286231328572814" type="Keyboard">
+                    <param id="0" name="Key">37</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="7" name="Set mirrored" sid="181479217931932" type="ตัวละคร">
+                    <param id="0" name="State">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="675213059710400">
+            <conditions>
+                <condition id="-3" name="Is on-screen" sid="447424260154827" type="Enemy1" />
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="234790598128364">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="985921814310065" type="Enemy1">
+                            <param id="0" name="Instance variable">move</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">&quot;R&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action behavior="Platform" id="7" name="Simulate control" sid="886534282214528" type="Enemy1">
+                            <param id="0" name="Control">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="688743392036555">
+                    <conditions>
+                        <condition behavior="Platform" id="10" name="Is by wall" sid="277573695710407" type="Enemy1">
+                            <param id="0" name="Side">1</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-10" name="Set value" sid="527931214708944" type="Enemy1">
+                            <param id="0" name="Instance variable">move</param>
+                            <param id="1" name="Value">&quot;L&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="526829522231338">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="812422606844505" type="Enemy1">
+                            <param id="0" name="Instance variable">move</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">&quot;L&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action behavior="Platform" id="7" name="Simulate control" sid="942681037636775" type="Enemy1">
+                            <param id="0" name="Control">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="831414890335465">
+                    <conditions>
+                        <condition behavior="Platform" id="10" name="Is by wall" sid="966238717662322" type="Enemy1">
+                            <param id="0" name="Side">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-10" name="Set value" sid="708136225754311" type="Enemy1">
+                            <param id="0" name="Instance variable">move</param>
+                            <param id="1" name="Value">&quot;R&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="232870047409267">
+            <conditions>
+                <condition id="0" name="On collision with another object" sid="557394956494434" type="ตัวละคร">
+                    <param id="0" name="Object">Enemy1</param>
+                </condition>
+                <condition behavior="Platform" id="4" inverted="1" name="Is falling" sid="305489875400158" type="ตัวละคร" />
+            </conditions>
+            <actions>
+                <action behavior="Flash" id="0" name="Flash" sid="430283669792203" type="ตัวละคร">
+                    <param id="0" name="&apos;On&apos; time">0.1</param>
+                    <param id="1" name="&apos;Off&apos; time">0.1</param>
+                    <param id="2" name="Duration">1.0</param>
+                </action>
+                <action id="-11" name="Subtract from" sid="697998876656448" type="System">
+                    <param id="0" name="Variable">Live</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="432108605914464">
+            <conditions>
+                <condition id="0" name="On collision with another object" sid="215157520045554" type="ตัวละคร">
+                    <param id="0" name="Object">Enemy1</param>
+                </condition>
+                <condition behavior="Platform" id="4" name="Is falling" sid="900344552818213" type="ตัวละคร" />
+                <condition id="2" inverted="1" name="Is playing" sid="757972191907422" type="Enemy1">
+                    <param id="0" name="Animation">&quot;Dead&quot;</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="4" name="Set animation" sid="301022408097853" type="Enemy1">
+                    <param id="0" name="Animation">&quot;Dead&quot;</param>
+                    <param id="1" name="From">1</param>
+                </action>
+                <action behavior="Platform" id="11" name="Set enabled" sid="110432865988759" type="Enemy1">
+                    <param id="0" name="State">0</param>
+                </action>
+                <action behavior="Platform" id="9" name="Set vector Y" sid="834179428946357" type="ตัวละคร">
+                    <param id="0" name="Vector Y">-600</param>
+                </action>
+                <action behavior="Fade" id="1" name="Start fade" sid="740187042709626" type="Enemy1" />
+            </actions>
+        </event-block>
+        <event-block sid="470929686710032">
+            <conditions>
+                <condition id="-1" name="Every tick" sid="309742799444418" type="System" />
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="230630741551813">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="953597067594046" type="FS">
+                            <param id="0" name="Instance variable">type</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">&quot;score&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Set text" sid="427837851869857" type="FS">
+                            <param id="0" name="Text">Score</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="537400542736378">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="618519853504154" type="FH">
+                            <param id="0" name="Instance variable">type</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">&quot;live&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Set text" sid="697424033791957" type="FH">
+                            <param id="0" name="Text">Live</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="427757888882368">
+            <conditions>
+                <condition id="0" name="On collision with another object" sid="731973861471289" type="ตัวละคร">
+                    <param id="0" name="Object">น้ำมัน2</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Destroy" sid="615307600870771" type="น้ำมัน2" />
+                <action id="-10" name="Add to" sid="556988081887348" type="System">
+                    <param id="0" name="Variable">Score</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+            </actions>
+        </event-block>
+    </events>
+</c2eventsheet>
